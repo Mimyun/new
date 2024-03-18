@@ -6,3 +6,5 @@ ly
 28
 // ver1.3 add tel
 010-1234-5678
+// ver1.4 added lee
+마스터가 아님
