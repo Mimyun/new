@@ -21,3 +21,6 @@ ly
 배고픔
 
 // ver1.7 master merge
+
+// ver1.8 gitdown
+깃허브에서 다운받아서 수정
