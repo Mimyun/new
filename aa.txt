@@ -4,3 +4,5 @@
 ly
 // ver1.2 add age
 28
+// ver1.3 add tel
+010-1234-5678
