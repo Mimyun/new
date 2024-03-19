@@ -1,0 +1,34 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezen.ly09.board.Board_Service">
+	<insert id="board_input">
+		insert into board(num,writer,title,content,groups) values(board_seq.nextval,#{param1},#{param2},#{param3},board_seq.currval)
+	</insert>
+	<select id="board_list" resultType="com.ezen.ly09.board.Board_DTO">
+		select * from board start with indent=0 connect by prior num=step order siblings by groups
+	</select>
+	<delete id="board_delete">
+		delete from board where num=#{param1}
+	</delete>
+	<select id="board_view" resultType="com.ezen.ly09.board.Board_DTO">
+		select * from board where num=#{param1}
+	</select>
+	<update id="board_conutup">
+		update board set count=count+1 where num=#{param1}
+	</update>
+	<insert id="board_reply_save">
+		insert into board(num,writer,title,content,groups,step,indent) values(board_seq.nextval,#{param1},#{param2},#{param3},#{param4},#{param5},#{param6})
+	</insert>
+	<update id="stepup">
+		update board set step=step+1 where groups=#{param1} and step>#{param2}
+	</update>
+	<select id="total" resultType="int">
+		select count(*) from board
+	</select>
+	<select id="page" resultType="com.ezen.ly09.board.Board_DTO">
+		select * from (
+			select rownum rn,A.* from(  
+				select * from board start with indent=0 connect by prior num=step order siblings by groups)A)
+			where rn between #{start} AND #{end}
+	</select>
+</mapper>

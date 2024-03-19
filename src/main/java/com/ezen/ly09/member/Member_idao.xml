@@ -1,0 +1,28 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ezen.ly09.member.Member_Service">
+	<insert id="member_input">
+		insert into framework_member values(#{param1}, #{param2}, #{param3}, #{param4}, #{param5}, #{param6}, #{param7}, #{param8}, #{param9})
+	</insert>
+	<select id="idcheck" resultType="String">
+		select id from framework_member where id=#{param1}
+	</select>
+	<select id="member_list" resultType="com.ezen.ly09.member.Member_DTO">
+		select * from framework_member order by name
+	</select>
+	<select id="pwcheck" resultType="String">
+		select pw from framework_member where id=#{param1} and pw=#{param2}
+	</select>
+	<select id="member_view" resultType="com.ezen.ly09.member.Member_DTO">
+		select * from framework_member where id=#{param1}
+	</select>
+	<delete id="member_delete">
+		delete from framework_member where id=#{param1}
+	</delete>
+	<update id="member_update">
+		update framework_member set pw=#{param2},name=#{param3},tel=#{param4},sex=#{param5},address=#{param6},hobby=#{param7},hello=#{param8},image=#{param9} where id=#{param1}
+	</update>
+	<select id="member_search" resultType="com.ezen.ly09.member.Member_DTO">
+		select * from framework_member where ${param1} like '%${param2}%'
+	</select>
+</mapper>

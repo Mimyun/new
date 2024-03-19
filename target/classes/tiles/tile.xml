@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="baseLayout" template="/WEB-INF/views/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="top" value="/WEB-INF/views/top.jsp"/>
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+	</definition>
+   
+	<definition name="main" extends="baseLayout">
+		<put-attribute name="title" value="메인화면"/>
+		<put-attribute name="body" value="/WEB-INF/views/main.jsp"/>
+	</definition>
+	
+	<definition name="member_input" extends="baseLayout">
+		<put-attribute name="title" value="회원가입"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/member_input.jsp"/>
+	</definition>
+	<definition name="member_list" extends="baseLayout">
+		<put-attribute name="title" value="회원목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/member_list.jsp"/>
+	</definition>
+	<definition name="member_login" extends="baseLayout">
+		<put-attribute name="title" value="회원목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/member_login.jsp"/>
+	</definition>
+	<definition name="member_view" extends="baseLayout">
+		<put-attribute name="title" value="회원상세"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/member_view.jsp"/>
+	</definition>
+	<definition name="member_update" extends="baseLayout">
+		<put-attribute name="title" value="회원수정"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/member_update.jsp"/>
+	</definition>
+	<definition name="member_search" extends="baseLayout">
+		<put-attribute name="title" value="회원검색"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/member_search.jsp"/>
+	</definition>
+	<definition name="member_search_view" extends="baseLayout">
+		<put-attribute name="title" value="회원검색결과"/>
+		<put-attribute name="body" value="/WEB-INF/views/member/member_search_view.jsp"/>
+	</definition>
+	
+	<definition name="board_input" extends="baseLayout">
+		<put-attribute name="title" value="게시글등록"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/board_input.jsp"/>
+	</definition>
+	<definition name="board_list" extends="baseLayout">
+		<put-attribute name="title" value="게시글목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/board_list.jsp"/>
+	</definition>
+	<definition name="board_view" extends="baseLayout">
+		<put-attribute name="title" value="게시글목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/board_view.jsp"/>
+	</definition>
+	<definition name="board_reply_view" extends="baseLayout">
+		<put-attribute name="title" value="게시글목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/board_reply_view.jsp"/>
+	</definition>
+	<definition name="board_search" extends="baseLayout">
+		<put-attribute name="title" value="게시글검색"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/board_search.jsp"/>
+	</definition>
+	<definition name="board_search_view" extends="baseLayout">
+		<put-attribute name="title" value="게시글검색결과"/>
+		<put-attribute name="body" value="/WEB-INF/views/board/board_search_view.jsp"/>
+	</definition>
+</tiles-definitions>
